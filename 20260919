@@ -1,0 +1,61 @@
+"def total_price(menu,order):
+    price=0
+    for i in range(len(order)):
+        price+=menu[order[i]]
+    return(price)
+menu  = {""아메리카노"": 4500, ""라떼"": 5000, ""티"": 3000}
+order = [""아메리카노"", ""라떼"", ""아메리카노"", ""티""]
+print(total_price(menu,order))
+#####
+def can_afford(menu,order,budget):
+    price=0
+    for i in range(len(order)):
+        price+=menu[order[i]]
+    if price > budget:
+        return(""over"")
+    else:
+        return(""ok"")
+
+
+
+
+menu  = {""아메리카노"": 4500, ""라떼"": 5000, ""티"": 3000}
+order = [""아메리카노"", ""라떼"", ""아메리카노"", ""티""]
+print(can_afford(menu,order,15000))"
+"def sold_out(quantity):
+    sold_out=list()
+    for i in quantity:
+        if quantity[i]==0:
+            sold_out.append(i)
+    return(sold_out)
+print(sold_out({""사과"": 3, ""배"": 0, ""감"": 7, ""귤"": 0}))
+"
+"def make_grades(name,score):
+    grades=dict()
+    for i in range(len(name)):
+        if score[i]>=90:
+            grades[name[i]]=""A""
+        elif score[i]>=70:
+            grades[name[i]]=""B""
+        else:
+            grades[name[i]]=""C""
+    return(grades)
+print(make_grades([""철수"", ""영희"", ""민수""], [95, 82, 68]))
+"
+"def pass_count(list,score):
+    passs=0
+    for i in range(len(list)):
+        if list[i]>=score:
+            passs+=1
+    return(passs)
+print(pass_count([88, 92, 79, 95, 63], 90))
+
+"
+"def avg_score(a):
+    x=0
+    for i in a:
+       x+=a[i]
+    return(x/len(a))
+print(avg_score({""철수"": 88, ""영희"": 92, ""민수"": 79}))
+
+"
