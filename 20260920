@@ -1,0 +1,27 @@
+def ispal1(pal):
+    for i in range(len(pal)):
+        if pal[i]!=pal[len(pal)-1-i]:
+            return(False)
+    return(True)
+##
+def ispal2(pal):
+    for i in range(len(pal)//2):
+        if(pal[::-1])==pal:
+            return(False)
+    return(True)
+##
+def ispal3(pal):
+    newpal=""
+    for i in range(len(pal)):
+        newpal+=pal[len(pal)-i-1]
+    return newpal==pal
+        
+
+
+        
+def isp(prime):
+    for i in range(2,int(prime**0.5)+1):
+        if prime%i==0:
+            return(False)
+    return(True)
+        
