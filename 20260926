@@ -1,0 +1,11 @@
+num=1000
+numl=[True]*num
+
+numl[0]=False
+numl[1]=False
+for y in range(2,num):
+    for i in range(y*2,num,y):
+        numl[i]=False
+for i in range(num):
+    if numl[i]==True:
+        print(i)   
