@@ -1,0 +1,57 @@
+"def soluition(arr,N):
+    di={}
+    for i in arr:
+        di[i]=0
+    for i in arr:
+        di[i]+=1
+    maxnum=[0,0]
+    for i in arr:
+        if maxnum[1]!=di[i]and max(di[i],maxnum[1])==di[i]:
+            maxnum[1]=di[i]
+            maxnum[0]=i
+        elif maxnum[1]==di[i]:
+            maxnum[0]=max(i,maxnum[0])
+            
+    return(maxnum[0])    
+       
+print(soluition([1,2,3,4,4,5,6,7,7,8,9,9,9,9,10],15))
+"
+"def soluition(board):
+    #board[y][x]
+    maxnum=0
+    minnum=999999999999999
+    num=0
+    #가로
+    for y in range(len(board)):
+        for x in range(len(board[1])):
+        #정사각형 이므로 첫번째 줄의 길이는 각 줄의 가로의 길이와 모두 같음.
+            num+=board[y][x]
+        maxnum=max(num,maxnum)
+        minnum=min(num,minnum)
+        num=0
+    #세로
+    for x in range(len(board[1])):
+        for y in range(len(board)):
+        #세로는 y가 x보다 먼저 바뀐다.
+            num+=board[y][x]
+        maxnum=max(num,maxnum)
+        minnum=min(num,minnum)
+        num=0
+    #대각선
+    for y in range(len(board)):
+        num+=board[y][y]
+    maxnum=max(num,maxnum)
+    minnum=min(num,minnum)
+    num=0
+    for y in range(len(board)):
+        num+=board[y][4-y]
+    maxnum=max(num,maxnum)
+    minnum=min(num,minnum)
+    num=0
+
+    result=maxnum//5+minnum//5
+    return(result)
+print(soluition([[25,11,82,61,34],[87,98,91,76,95],[44,2,39,57,65],[69,32,51,16,41],[94,27,74,37,9]] ))
+
+
+"
