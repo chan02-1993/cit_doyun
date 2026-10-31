@@ -1,0 +1,33 @@
+"def soluition(arr,N):
+    before=[]
+    minnum=9999
+    totall=0
+    for y in range(N):
+        for x in range(N):
+            if x not in before and arr[y][x] != 0:
+                minnum=min(minnum,arr[y][x])
+        for x in range(N):
+            if x not in before:
+                    if minnum == arr[y][x]:
+                        before.append(x)
+                        totall+=arr[y][x]
+        minnum=9999
+    return(totall) 
+            
+            
+print(soluition([[0, 25, 7, 56, 12], [4, 0, 31, 88, 45], [62, 19, 0, 71, 23], [95, 36, 51, 0, 44], [16, 41, 66, 73, 0]],5))
+"
+"def soluition(arr,N,J):
+    totall=0
+    for i in range(N):
+        totall+=arr[i]
+    left=0
+    left=J%totall
+    for i in range(N):
+        if left > 0:
+            left-=arr[i]
+        else:
+            return(i)
+            
+print(soluition([7, 5, 2, 9, 3, 4],6,80))
+"
